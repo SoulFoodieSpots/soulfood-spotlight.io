@@ -38,15 +38,16 @@ window.startSubscription = async () => {
 // 👤 Handle UI on Auth Change
 onAuthStateChanged(auth, user => {
   const userSection = document.getElementById('user-section');
-  const subscribeSection = document.getElementById('subscribe-section');
-  const emailSpan = document.getElementById('user-email');
+  const userEmailSpan = document.getElementById('user-email');
 
-  if (user) {
-    userSection.style.display = 'none';
-    subscribeSection.style.display = 'block';
-    emailSpan.textContent = user.email;
-  } else {
+  if (!user) {
+    signOut(auth); // force logout if user didn't click Sign In
+    if (userSection) userSection.style.display = 'none';
+    return;
+  }
+
+  if (userSection && userEmailSpan) {
     userSection.style.display = 'block';
-    subscribeSection.style.display = 'none';
+    userEmailSpan.textContent = user.email;
   }
 });
