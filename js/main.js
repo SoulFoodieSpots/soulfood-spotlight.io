@@ -3,12 +3,25 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChang
 import { getFunctions, httpsCallable } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-functions.js";
 
 // 🔧 Replace these with your actual Firebase project credentials
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  appId: "YOUR_APP_ID"
-};
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDHrw8JqI5AWYDwwvJvkFv0zSzH5ZnLqDM",
+    authDomain: "image-storage-8307f.firebaseapp.com",
+    projectId: "image-storage-8307f",
+    storageBucket: "image-storage-8307f.firebasestorage.app",
+    messagingSenderId: "994051321306",
+    appId: "1:994051321306:web:108f863ed64aa24fb124e3"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
