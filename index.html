@@ -62,7 +62,7 @@
     window.startSubscription = async () => {
       const createCheckout = httpsCallable(functions, 'createCheckoutSession');
       const result = await createCheckout({ origin: window.location.origin });
-      const stripe = Stripe("YOUR_STRIPE_PUBLISHABLE_KEY"); // Replace this
+      const stripe = Stripe("prod_SVNCiskOh10Hby"); // Replace this
       stripe.redirectToCheckout({ sessionId: result.data.sessionId });
     };
 
