@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Soul Food Spotlight</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.css" />
   <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>🌟 Soul Food Spotlight</h1>
-    <p>Get featured and reach more customers!</p>
-    <div id="user-section">
+  <div class="hero">
+    <img src="assets/hero.jpg" alt="People dining smiling in soul food restaurant" />
+    <div class="hero-text">
+      <h1>🌟 Soul Food Spotlight</h1>
+      <p>Feature your restaurant for just $25/month!</p>
       <button onclick="signIn()">Sign In with Google</button>
     </div>
-    <div id="subscribe-section" style="display: none;">
+  </div>
+
+  <div class="container">
+    <div id="user-section" style="display:none;">
       <p>Welcome, <span id="user-email"></span>!</p>
-      <button onclick="startSubscription()">Subscribe to Be Featured</button>
+      <button onclick="startSubscription()">Subscribe for $25/month</button>
       <button onclick="signOut()">Sign Out</button>
     </div>
   </div>
+
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
