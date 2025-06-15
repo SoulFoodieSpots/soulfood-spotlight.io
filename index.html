@@ -8,17 +8,19 @@
   <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
+  <!-- Hero Section -->
   <div class="hero">
-    <img src="assets/hero.jpg" alt="People dining smiling in soul food restaurant" />
+    <img src="assets/hero.jpg" alt="People dining in a soul food restaurant" />
     <div class="hero-text">
       <h1>🌟 Soul Food Spotlight</h1>
-      <p>Feature your restaurant for just $25/month!</p>
+      <p>Get your soul food spot featured for just $25/month!</p>
       <button onclick="signIn()">Sign In with Google</button>
     </div>
   </div>
 
+  <!-- User Section -->
   <div class="container">
-    <div id="user-section" style="display:none;">
+    <div id="user-section" style="display: none;">
       <p>Welcome, <span id="user-email"></span>!</p>
       <button onclick="startSubscription()">Subscribe for $25/month</button>
       <button onclick="signOut()">Sign Out</button>
