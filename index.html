@@ -31,6 +31,51 @@
     </div>
   </div>
 
-  <script type="module" src="js/main.js"></script>
+  <!-- Firebase & App Logic -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+    import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+    import { getFunctions, httpsCallable } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-functions.js";
+
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const functions = getFunctions(app);
+
+    window.signIn = () => {
+      const provider = new GoogleAuthProvider();
+      signInWithPopup(auth, provider).catch(console.error);
+    };
+
+    window.signOut = () => {
+      signOut(auth);
+    };
+
+    window.startSubscription = async () => {
+      const createCheckout = httpsCallable(functions, 'createCheckoutSession');
+      const result = await createCheckout({ origin: window.location.origin });
+      const stripe = Stripe("YOUR_STRIPE_PUBLISHABLE_KEY"); // Replace this
+      stripe.redirectToCheckout({ sessionId: result.data.sessionId });
+    };
+
+    // Listen for user login state changes
+    onAuthStateChanged(auth, user => {
+      const userSection = document.getElementById('user-section');
+      const userEmailSpan = document.getElementById('user-email');
+
+      if (user && userSection && userEmailSpan) {
+        userSection.style.display = 'block';
+        userEmailSpan.textContent = user.email;
+      } else if (userSection) {
+        userSection.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
