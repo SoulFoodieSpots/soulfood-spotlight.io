@@ -4,12 +4,12 @@ import { getFunctions, httpsCallable } from "https://www.gstatic.com/firebasejs/
 
 // ✅ Your Firebase config — DO NOT wrap in <script> tags
 const firebaseConfig = {
-  apiKey: "AIzaSyDHrw8JqI5AWYDwwvJvkFv0zSzH5ZnLqDM",
-  authDomain: "image-storage-8307f.firebaseapp.com",
-  projectId: "image-storage-8307f",
-  storageBucket: "image-storage-8307f.appspot.com",
-  messagingSenderId: "994051321306",
-  appId: "1:994051321306:web:108f863ed64aa24fb124e3"
+  apiKey: "AIzaSyBrlCFTo3LFXvbDgK_Q83b6Cvd7elEGfX4",
+  authDomain: "commentreplys.firebaseapp.com",
+  projectId: "commentreplys",
+  storageBucket: "commentreplys.firebasestorage.app",
+  messagingSenderId: "72668217502",
+  appId: "1:72668217502:web:67074bbb574c0a00a17b8f"
 };
 
 // ✅ Initialize Firebase
