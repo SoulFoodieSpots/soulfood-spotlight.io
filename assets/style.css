@@ -3,19 +3,21 @@ body {
   font-family: Arial, sans-serif;
   color: #3b2f2f;
   text-align: center;
+  background-color: #fffaf3;
 }
 
 .hero {
   position: relative;
   width: 100%;
-  height: 300px;
+  max-height: 80vh;
   overflow: hidden;
 }
 
-.hero img {
+.hero-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .hero-text {
@@ -23,10 +25,17 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
-  background: rgba(0,0,0,0.4);
-  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 20px 30px;
   border-radius: 8px;
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+}
+
+.container {
+  padding: 40px 20px;
 }
 
 button {
@@ -34,8 +43,9 @@ button {
   color: white;
   border: none;
   padding: 12px 24px;
-  margin: 10px;
+  margin: 10px 10px 0;
   cursor: pointer;
+  font-size: 16px;
   border-radius: 5px;
 }
 
