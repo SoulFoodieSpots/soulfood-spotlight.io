@@ -31,7 +31,7 @@ window.signOut = () => {
 window.startSubscription = async () => {
   const createCheckout = httpsCallable(functions, 'createCheckoutSession');
   const result = await createCheckout({ origin: window.location.origin });
-  const stripe = Stripe("YOUR_STRIPE_PUBLISHABLE_KEY"); // Replace this!
+  const stripe = Stripe("pk_live_51Ra3m8Le5mN8hyn8U7Ml7iJ1M4EqUASdvjprPgTkgGMYBxDhEqZ6bq5pohpvtYkG96iolHUFkq4nA9bhLpg5IJp000z2paHfHL"); // Replace this!
   stripe.redirectToCheckout({ sessionId: result.data.sessionId });
 };
 
