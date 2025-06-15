@@ -6,6 +6,7 @@ body {
   text-align: center;
 }
 
+/* Card container */
 .card {
   max-width: 700px;
   margin: 40px auto;
@@ -20,41 +21,50 @@ body {
   transform: scale(1.01);
 }
 
+/* Image inside the card */
 .card-img {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: contain;
 }
 
+/* Content inside the card */
 .card-body {
-  padding: 20px;
+  padding: 20px 30px;
 }
 
 .card-body h1 {
   margin-top: 0;
+  font-size: 24px;
   color: #c94e0c;
 }
 
 .card-body p {
-  font-size: 1rem;
-  margin-bottom: 20px;
+  font-size: 16px;
+  margin: 15px 0 25px;
 }
 
+/* Container for user section */
+.container {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  padding: 20px;
+}
+
+/* Button styling */
 button {
   background-color: #c94e0c;
   color: white;
   border: none;
   padding: 12px 24px;
-  margin-top: 10px;
+  margin: 10px 10px 0;
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
+  transition: background-color 0.2s ease;
 }
 
 button:hover {
   background-color: #aa3c00;
-}
-
-.container {
-  padding: 20px;
 }
