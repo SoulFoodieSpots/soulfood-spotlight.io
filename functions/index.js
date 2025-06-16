@@ -4,7 +4,7 @@ const stripe = require("stripe")(functions.config().stripe.secret);
 
 admin.initializeApp();
 
-const YOUR_PRICE_ID = "price_XXXXXXXXXXXXXX";
+const YOUR_PRICE_ID = "prod_SVNCiskOh10Hby";
 
 exports.createCheckoutSession = functions.https.onCall(async (data, context) => {
   if (!context.auth) {
