@@ -8,13 +8,8 @@
   <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
-  <!-- Image Card Section -->
   <div class="card">
-    <img
-      class="card-img"
-      src="https://firebasestorage.googleapis.com/v0/b/image-storage-8307f.firebasestorage.app/o/ComingSoon3.png?alt=media&token=96a8b519-a849-4084-ad65-89945539a9d2"
-      alt="Soul food dining"
-    />
+    <img class="card-img" src="https://firebasestorage.googleapis.com/v0/b/image-storage-8307f.firebasestorage.app/o/ComingSoon3.png?alt=media&token=96a8b519-a849-4084-ad65-89945539a9d2" alt="Soul food dining" />
     <div class="card-body">
       <h1>🌟 Soul Food Spotlight</h1>
       <p>Get your soul food spot featured for just $25/month!</p>
@@ -22,7 +17,6 @@
     </div>
   </div>
 
-  <!-- User Section -->
   <div class="container">
     <div id="user-section" style="display: none;">
       <p>Welcome, <span id="user-email"></span>!</p>
@@ -31,20 +25,17 @@
     </div>
   </div>
 
-  <!-- Firebase & App Logic -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
     import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
     import { getFunctions, httpsCallable } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-functions.js";
 
     const firebaseConfig = {
-  apiKey: "AIzaSyBrlCFTo3LFXvbDgK_Q83b6Cvd7elEGfX4",
-  authDomain: "commentreplys.firebaseapp.com",
-  projectId: "commentreplys",
-  storageBucket: "commentreplys.firebasestorage.app",
-  messagingSenderId: "72668217502",
-  appId: "1:72668217502:web:67074bbb574c0a00a17b8f"
-};
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT.firebaseapp.com",
+      projectId: "YOUR_PROJECT",
+      appId: "YOUR_APP_ID"
+    };
 
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
@@ -62,20 +53,23 @@
     window.startSubscription = async () => {
       const createCheckout = httpsCallable(functions, 'createCheckoutSession');
       const result = await createCheckout({ origin: window.location.origin });
-      const stripe = Stripe("pk_live_51Ra3m8Le5mN8hyn8U7Ml7iJ1M4EqUASdvjprPgTkgGMYBxDhEqZ6bq5pohpvtYkG96iolHUFkq4nA9bhLpg5IJp000z2paHfHL"); // Replace this
+      const stripe = Stripe("pk_test_YOUR_PUBLISHABLE_KEY");
       stripe.redirectToCheckout({ sessionId: result.data.sessionId });
     };
 
-    // Listen for user login state changes
     onAuthStateChanged(auth, user => {
       const userSection = document.getElementById('user-section');
       const userEmailSpan = document.getElementById('user-email');
 
-      if (user && userSection && userEmailSpan) {
+      if (!user) {
+        signOut(auth);
+        if (userSection) userSection.style.display = 'none';
+        return;
+      }
+
+      if (userSection && userEmailSpan) {
         userSection.style.display = 'block';
         userEmailSpan.textContent = user.email;
-      } else if (userSection) {
-        userSection.style.display = 'none';
       }
     });
   </script>
