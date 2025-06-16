@@ -6,7 +6,6 @@ body {
   text-align: center;
 }
 
-/* Card container */
 .card {
   max-width: 700px;
   margin: 40px auto;
@@ -21,7 +20,6 @@ body {
   transform: scale(1.01);
 }
 
-/* Image inside the card */
 .card-img {
   width: 100%;
   height: auto;
@@ -29,7 +27,6 @@ body {
   object-fit: contain;
 }
 
-/* Content inside the card */
 .card-body {
   padding: 20px 30px;
 }
@@ -45,14 +42,12 @@ body {
   margin: 15px 0 25px;
 }
 
-/* Container for user section */
 .container {
   max-width: 700px;
   margin: 0 auto 40px;
   padding: 20px;
 }
 
-/* Button styling */
 button {
   background-color: #c94e0c;
   color: white;
