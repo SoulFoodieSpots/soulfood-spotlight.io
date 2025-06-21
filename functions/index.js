@@ -3,7 +3,7 @@ const admin = require("firebase-admin");
 const stripe = require("stripe")(functions.config().stripe.secret);
 admin.initializeApp();
 
-const YOUR_PRICE_ID = "price_25usd_monthly_id"; // Replace with actual price ID from Stripe Dashboard
+const YOUR_PRICE_ID = "price_1RaMRgLe5mN8hyn8cBEOX3v7"; // Replace with actual price ID from Stripe Dashboard
 
 exports.createCheckoutSession = functions.https.onCall(async (data, context) => {
   if (!context.auth) {
