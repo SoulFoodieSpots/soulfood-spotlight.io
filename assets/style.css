@@ -27,49 +27,65 @@ body {
   border-radius: 5px;
 }
 
-.benefits-section {
+.benefits-intro {
+  margin: 40px auto 20px;
   max-width: 700px;
-  margin: 40px auto;
-  text-align: left;
   padding: 0 20px;
 }
-.benefits-section h2 {
-  text-align: center;
+.benefits-intro h2 {
   color: #c94e0c;
-}
-.benefits-section ul {
-  list-style: none;
-  padding: 0;
-}
-.benefits-section li {
-  margin: 10px 0;
-  padding-left: 25px;
-  position: relative;
-}
-.benefits-section li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #c94e0c;
-  font-weight: bold;
-}
-.price-note {
-  text-align: center;
-  font-size: 18px;
-  margin-top: 20px;
-  font-weight: bold;
 }
 
+.benefit-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.benefit-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 220px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+.benefit-card:hover {
+  transform: translateY(-5px);
+}
+.benefit-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+.benefit-card h3 {
+  margin: 10px 0 5px;
+  color: #c94e0c;
+}
+.benefit-card p {
+  font-size: 14px;
+}
+
+.subscribe-section {
+  margin: 40px auto;
+}
+.price-note {
+  font-size: 18px;
+  font-weight: bold;
+}
 .subscribe-button {
-  display: block;
-  width: max-content;
-  margin: 30px auto;
+  display: inline-block;
   background-color: #c94e0c;
   color: white;
-  padding: 12px 24px;
-  text-decoration: none;
+  padding: 14px 28px;
   font-size: 16px;
-  border-radius: 5px;
+  text-decoration: none;
+  border-radius: 6px;
   transition: background-color 0.2s ease;
 }
 .subscribe-button:hover {
